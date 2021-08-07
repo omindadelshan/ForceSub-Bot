@@ -1,5 +1,5 @@
 # All credits goes to Adnan for his repo <https://github.com/viperadnan-git/force-subscribe-telegram-bot>
-# Uvindu Bro <https://t.me/UvinduBro>
+# ominda <https://t.me/omindas>
 # @Uvindu_Bro
 
 import os
@@ -38,14 +38,14 @@ def _onUnMuteRequest(client, lel):
             if lel.message.reply_to_message.from_user.id == user_id:
               lel.message.delete()
           except UserNotParticipant:
-            client.answer_callback_query(lel.id, text="❗ Join the mentioned 'Channel' and press the 'Unmute Me' button again.🤗", show_alert=True)
+            client.answer_callback_query(lel.id, text="❗ Join the mentioned '👨‍💻Channel👨‍💻' and press the '⛔Unmute Me⛔' button again.😇", show_alert=True)
       else:
-        client.answer_callback_query(lel.id, text="❗ You are muted by admins for other reasons.😏", show_alert=True)
+        client.answer_callback_query(lel.id, text="⛔ You are muted by admins for other reasons 🥺🤗", show_alert=True)
     else:
       if not client.get_chat_member(chat_id, (client.get_me()).id).status == 'administrator':
         client.send_message(chat_id, f"❗ **{lel.from_user.mention} is trying to Unmute himself but I can't unmute him because I am not an admin in this chat.😑")
       else:
-        client.answer_callback_query(lel.id, text="❗ Warning: Don't click the button if you can speak freely.👿", show_alert=True)
+        client.answer_callback_query(lel.id, text="❗ Warning: Don't click the button if you can speak freely.⚡⚡", show_alert=True)
 
 @Jebot.on_message(filters.text & ~filters.private & ~filters.edited, group=1)
 def _check_member(client, message):
@@ -65,8 +65,8 @@ def _check_member(client, message):
                 Config.WARN_MESSAGE,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("🗣 Unmute Me", callback_data="hukaidaala")],
-                  [InlineKeyboardButton("🔊 Join Channel", url=f"https://t.me/{chat_u}")]]))
+                  [[InlineKeyboardButton("🗣 Unmute Me🔥", callback_data="hukaidaala")],
+                  [InlineKeyboardButton("🔊 Join Channel🤖", url=f"https://t.me/{chat_u}")]]))
               client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
 
          except ChatAdminRequired:
